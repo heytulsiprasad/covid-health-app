@@ -1,5 +1,96 @@
 console.log("Client side javascript is working");
 
+let config = {
+    modeBarButtonsToRemove: [
+        "toImage",
+        "sendDataToCloud",
+        "editInChartStudio",
+        "zoom2d",
+        "pan2d",
+        "select2d",
+        "lasso2d",
+        "zoomIn2d",
+        "zoomOut2d",
+        "autoScale2d",
+        "resetScale2d",
+        "hoverClosestCartesian",
+        "hoverCompareCartesian",
+        "zoom3d",
+        "pan3d",
+        "orbitRotation",
+        "tableRotation",
+        "resetCameraDefault3d",
+        "resetCameraLastSave3d",
+        "hoverClosest3d",
+        "zoomInGeo",
+        "zoomOutGeo",
+        "resetGeo",
+        "hoverClosestGeo",
+        "hoverClosestGl2d",
+        "hoverClosestPie",
+        "resetViewSankey",
+        "toggleHover",
+        "resetViews",
+        "toggleSpikelines",
+        "resetViewMapbox",
+        "zoomInMapbox",
+        "zoomOutMapbox"
+    ],
+    displaylogo: false
+};
+
+// When User is At Root Route => results sections
+fetch("http://localhost:5000/covid?search=india").then(response => {
+    response.json().then(res => {
+        // console.log(res);
+
+        const bg1 = document.querySelector(".main__default--bg1");
+        bg1.style.backgroundImage = `url(${res.image1})`;
+
+        const bg2 = document.querySelector(".footer--bg2");
+        bg2.style.backgroundImage = `url(${res.image2})`;
+
+        const title = document.querySelector(".result__title");
+        const timer = document.querySelector(".result__timer");
+        if (res.place || res.country) {
+            title.textContent = res.place || res.country;
+            timer.textContent = res.updated;
+        } else {
+            title.textContent = "India";
+            timer.textContent = "Last update yesterday";
+        }
+
+        // BAR GRAPH => RESULT
+        let barData = [
+            {
+                x: ["confirmed", "recovered", "deaths"],
+                y: [res.confirmed, res.recovered, res.deaths],
+                type: "bar",
+                hoverinfo: "none"
+            }
+        ];
+
+        Plotly.newPlot("bar-result", barData, {}, config);
+
+        // PIE CHART => RESULT
+
+        var pieData = [
+            {
+                values: [res.confirmed, res.recovered, res.deaths],
+                labels: ["confirmed", "recovered", "deaths"],
+                type: "pie"
+            }
+        ];
+
+        var layout = {
+            height: 334,
+            width: 486
+        };
+
+        Plotly.newPlot("pie-result", pieData, layout, config);
+    });
+});
+
 const form = document.querySelector("#search-form");
 
 form.addEventListener("submit", e => {
@@ -21,11 +112,43 @@ form.addEventListener("submit", e => {
                 bg2.style.backgroundImage = `url(${res.image2})`;
 
                 const title = document.querySelector(".result__title");
-                if (res.place) {
-                    title.textContent = res.place;
+                const timer = document.querySelector(".result__timer");
+                if (res.place || res.country) {
+                    title.textContent = res.place || res.country;
+                    timer.textContent = res.updated;
                 } else {
                     title.textContent = "Latest Updates";
+                    timer.textContent = "Last update yesterday";
                 }
+
+                // BAR GRAPH => RESULT
+                let barData = [
+                    {
+                        x: ["confirmed", "recovered", "deaths"],
+                        y: [res.confirmed, res.recovered, res.deaths],
+                        type: "bar",
+                        hoverinfo: "none"
+                    }
+                ];
+
+                Plotly.newPlot("bar-result", barData, {}, config);
+
+                // PIE CHART => RESULT
+
+                var pieData = [
+                    {
+                        values: [res.confirmed, res.recovered, res.deaths],
+                        labels: ["confirmed", "recovered", "deaths"],
+                        type: "pie"
+                    }
+                ];
+
+                var layout = {
+                    height: 334,
+                    width: 486
+                };
+
+                Plotly.newPlot("pie-result", pieData, layout, config);
             });
         })
         .catch(error => {

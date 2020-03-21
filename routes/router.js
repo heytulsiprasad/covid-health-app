@@ -1,10 +1,10 @@
 const express = require("express");
 const moment = require("moment");
 const router = new express.Router();
-const request = require("request");
 
 const place = require("../src/utils/place");
 const tracker = require("../src/utils/tracker");
+const trackerDef = require("../src/utils/trackerDefault");
 
 const image2 =
     "https://images.unsplash.com/photo-1580483733209-558da93c143c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
@@ -59,6 +59,24 @@ router.get("/covid", (req, res) => {
                 deaths: data.latest.deaths,
                 recovered: data.latest.recovered
             });
+        });
+    });
+});
+
+router.get("/covidLatest", (req, res) => {
+    trackerDef((error, latestData) => {
+        if (error) {
+            return res.send({
+                confirmed: 272166,
+                deaths: 11299,
+                recovered: 87256
+            });
+        }
+
+        res.send({
+            confirmed: latestData.confirmed,
+            deaths: latestData.deaths,
+            recovered: latestData.recovered
         });
     });
 });

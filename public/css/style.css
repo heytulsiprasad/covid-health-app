@@ -83,11 +83,17 @@ body {
     display: flex;
     justify-content: space-around;
     width: 80%; }
-    .main__result--pre div {
+    .main__result--pre div.graphbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 32rem;
       height: 22rem;
       border-radius: 25px;
       box-shadow: 0 1px 20px rgba(0, 0, 0, 0.507); }
+      .main__result--pre div.graphbox .graph {
+        height: 95%;
+        width: 95%; }
 
 .main__default {
   display: flex;
@@ -106,13 +112,21 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 75%; }
-    .main__default--content img {
+    .main__default--content div.graphbox__default {
+      display: flex;
+      align-self: center;
+      justify-content: center;
       width: 80%;
-      height: 30rem;
+      height: 20%;
       border-radius: 25px;
+      background-color: #fff;
       box-shadow: 0 1px 20px rgba(0, 0, 0, 0.507); }
-      .main__default--content img:last-child {
+      .main__default--content div.graphbox__default:last-child {
         margin-top: 4rem; }
+      .main__default--content div.graphbox__default .graph-default {
+        align-self: center;
+        height: 95%;
+        width: 95%; }
 
 .main__present {
   background-color: #ffede1;
@@ -209,6 +223,15 @@ body {
   bottom: 2rem;
   color: #000000; }
 
+.result__timer {
+  width: 72%;
+  text-align: left;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 3rem;
+  font-style: italic;
+  font-weight: 400; }
+
 .panic__form {
   flex-basis: 35%;
   width: 30%; }
@@ -280,9 +303,18 @@ ul.five__steps {
   flex-basis: 28%;
   height: 150px;
   align-self: center;
-  border: 2px solid #424242;
+  border: 1px solid #424242;
   border-radius: 30px;
-  padding: 8px 25px; }
+  padding: 8px 25px;
+  position: relative; }
+  .panic__results p.before {
+    position: absolute;
+    top: -38px;
+    left: 17px;
+    font-style: italic; }
+
+.graph-default {
+  overflow: hidden; }
 
 .container {
   display: flex;
