@@ -157,9 +157,9 @@
         }
 
         &-content {
+            display: flex;
             margin-top: 5rem;
-            text-align: center;
-            width: 50%;
+            width: 80%;
 
             font-size: 1.2rem;
             line-height: 1.4;
@@ -277,4 +277,110 @@
     position: relative;
     bottom: 2rem;
     color: #000000;
+}
+
+.panic__form {
+    flex-basis: 35%;
+    width: 30%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        h4.symptoms {
+            margin-bottom: 1rem;
+        }
+
+        h4.since {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            padding-top: 0.9rem;
+            padding-bottom: 0.9rem;
+            border: none;
+            outline: none;
+            border-radius: 100px;
+            padding-left: 1rem;
+
+            &::placeholder {
+                font-style: italic;
+                color: #5256539d;
+            }
+        }
+
+        input.since {
+            width: 70%;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        button {
+            position: absolute;
+            width: 5rem;
+            border-radius: 100px;
+            border: none;
+            outline: none;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            transition: all .3s ease-in-out;
+
+            background-color: #00120b;
+            color: #fff;
+            font-size: 1.3rem;
+
+            right: 130px;
+            bottom: 2px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #363537;
+            }
+
+            &:active {
+                cursor: pointer;
+                background-color: #363537bd;
+            }
+        }
+    }
+}
+
+.panic__space {
+    flex-basis: 2%;
+}
+
+.panic__defaults {
+    text-align: right;
+    flex-basis: 30%;
+}
+
+ul.five__steps {
+    list-style: none;
+    margin-top: 2rem;
+    font-size: 1.12rem;
+
+    strong {
+        margin-right: 1rem;
+        color: rgb(233, 65, 52);
+    }
+
+    li {
+        margin: .35rem 1rem;
+        margin-left: 0;
+    }
+}
+
+.panic__results {
+    flex-basis: 28%;
+    height: 150px;
+    align-self: center;
+    border: 2px solid #424242;
+    border-radius: 30px;
+    padding: 8px 25px;
 }

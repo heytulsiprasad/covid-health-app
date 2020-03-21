@@ -1,16 +1,41 @@
 <section class="main__present">
     <h2 class="main__present-heading">
-        Why shouldn't you panic?
+        Should You Panic?
     </h2>
-    <p class="main__present-content">
-        Lorem ipsum dolor sit amet consectetur, adipisicing
-        elit. Odit laboriosam eos, unde numquam excepturi
-        repellendus quae itaque tenetur, animi beatae
-        exercitationem sed. Itaque, recusandae! Velit unde sunt
-        optio corrupti accusantium rem esse, culpa quaerat
-        ratione eum mollitia doloribus earum ea maiores dolorem?
-        Ex, eveniet dolorem? optio corrupti accusantium rem
-        esse, culpa quaerat ratione eum mollitia doloribus earum
-        ea maiores dolorem? Ex, eveniet dolorem?
-    </p>
+    <div class="main__present-content">
+        <div class="panic__form" id="panic-form">
+            <form>
+                <h4 class="symptoms">Symptoms that you have?</h4>
+                <label>
+                    <input type="checkbox" name="cough"> Cough
+                </label>
+                <label>
+                    <input type="checkbox" name="fever"> Fever
+                </label>
+                <label>
+                    <input type="checkbox" name="tired"> Tiredness
+                </label>
+                <label>
+                    <input type="checkbox" name="breathe"> Difficulty Breathing
+                </label>
+                <h4 class="since">Since When?</h4>
+                <input type="number" name="since" class="since" max="10" placeholder="number of days...">
+                <button>Done</button>
+            </form>
+        </div>
+        <div class="panic__space"></div>
+        <div class="panic__results" id="result"></div>
+        <div class="panic__space"></div>
+        <div class="panic__defaults">
+            <h2>Do The Five 🖐</h2>
+            <ul class="five__steps">
+                <li>Wash them often &nbsp; <strong> HANDS</strong> </li>
+                <li>Cough into it &nbsp;<strong> ELBOW</strong></li>
+                <li>Don't touch it &nbsp;<strong> FACE</strong></li>
+                <li>Keep safe distance &nbsp;<strong> SPACE</strong> </li>
+                <li>Stay if you can &nbsp;<strong> HOME</strong></li>
+            </ul>
+        </div>
+
+    </div>
 </section>
