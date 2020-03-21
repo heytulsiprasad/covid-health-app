@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    color: #fff;
+    background-image: url(../img/macau-photo-agency-2AGj7bQ68lk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.568);
+    background-blend-mode: soft-light;
+    background-attachment: fixed;
+}
+
+.main {
+    &__result {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    &__default {
+        padding-top: 6rem;
+        padding-bottom: 8rem;
+    }
+
+    &__present {
+        padding-top: 5rem;
+        padding-bottom: 8rem;
+    }
+}
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
