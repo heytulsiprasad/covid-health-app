@@ -10,21 +10,24 @@ const unsplash = new Unsplash({
     secret: process.env.UNSPLASH_SECRET
 });
 
-const getSinglePhoto = (keyword, callback) => {
+const getDoublePhoto = (keyword, callback) => {
+    let pics = [];
+
     unsplash.search
-        .photos(keyword, 1, 1, { orientation: "portrait" })
+        .photos(keyword, 1, 2, { orientation: "landscape" })
         .then(toJson)
         .then(photosData => {
             photosData.results.forEach(item => {
                 const img = item.urls.regular;
-                callback(undefined, img);
+                pics.push(img);
             });
+            callback(undefined, pics);
         })
         .catch(error => callback(error, undefined));
 };
 
-// getSinglePhoto("India", (error, data) => {
+// getDoublePhoto("India", (error, data) => {
 //     console.log(data);
 // });
 
-module.exports = getSinglePhoto;
+module.exports = getDoublePhoto;

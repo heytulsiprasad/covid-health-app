@@ -22,7 +22,15 @@ const tracker = (place, callback) => {
             });
 
             if (placeData === undefined) {
-                callback("Unable to find location!", undefined);
+                request({ url: latest, json: true }, (error, response) => {
+                    try {
+                        const latestinfo = response.body.latest;
+                        callback("No recorded data yet!", latestinfo);
+                    } catch (error) {
+                        console.log("Unable to connect to COVID API");
+                        callback("No recorded data yet!", undefined);
+                    }
+                });
             } else {
                 callback(undefined, placeData);
             }
@@ -32,7 +40,7 @@ const tracker = (place, callback) => {
     });
 };
 
-// tracker("italy", (error, data) => {
+// tracker("moscow", (error, data) => {
 //     console.log(error);
 //     console.log(data);
 // });
