@@ -40,7 +40,7 @@ const tracker = (place, callback) => {
     });
 };
 
-// tracker("moscow", (error, data) => {
+// tracker("india", (error, data) => {
 //     console.log(error);
 //     console.log(data);
 // });
