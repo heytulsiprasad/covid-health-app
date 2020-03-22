@@ -40,7 +40,7 @@ let config = {
 };
 
 // When User is At Root Route => results sections
-fetch("http://localhost:5000/covid?search=india").then(response => {
+fetch("/covid?search=india").then(response => {
     response.json().then(res => {
         // console.log(res);
 
@@ -100,7 +100,7 @@ form.addEventListener("submit", e => {
     const input = e.target.elements.search.value;
     // console.log(input);
 
-    fetch("http://localhost:5000/covid?search=" + encodeURIComponent(input))
+    fetch("/covid?search=" + encodeURIComponent(input))
         .then(response => {
             response.json().then(res => {
                 console.log(res);
