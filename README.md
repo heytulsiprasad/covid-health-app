@@ -4,7 +4,7 @@
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 
-> A flawless source o fetch latest data and analysis on COVID-19 directly from the John Hopkins University (through [API](https://github.com/ExpDev07/coronavirus-tracker-api)). It has a built in symptom detector which helps people to avoid sudden panic attacks in these kind of pandemics. This will ultimately provide awareness as well as transparency to each and everyone.
+> A flawless source to fetch latest data and analysis on COVID-19 directly from the John Hopkins University (through [API](https://github.com/ExpDev07/coronavirus-tracker-api)). It has a built in symptom detector which helps people to avoid sudden panic attacks in these kind of pandemics. This will ultimately provide awareness as well as transparency to each and everyone.
 
 &nbsp;
 
