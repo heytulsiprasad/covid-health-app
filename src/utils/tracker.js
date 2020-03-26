@@ -1,11 +1,9 @@
 const request = require("request");
 
 const tracker = (place, callback) => {
-    const base_url = "https://coronavirus-tracker-api.herokuapp.com/";
-    const latest = base_url + "/v2/latest";
-    const total = base_url + "/v2/locations";
+    const url = "https://coronavirus-tracker-api.herokuapp.com/v2/locations";
 
-    request({ url: total, json: true }, (error, response) => {
+    request({ url: url, json: true }, (error, response) => {
         try {
             const locations = response.body.locations; // array of locations
             const placeData = locations.find(location => {
@@ -40,7 +38,7 @@ const tracker = (place, callback) => {
     });
 };
 
-// tracker("india", (error, data) => {
+// tracker("inia", (error, data) => {
 //     console.log(error);
 //     console.log(data);
 // });
