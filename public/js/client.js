@@ -63,8 +63,8 @@ fetch("/covid?search=india").then(response => {
         // BAR GRAPH => RESULT
         let barData = [
             {
-                x: ["confirmed", "recovered", "deaths"],
-                y: [res.confirmed, res.recovered, res.deaths],
+                x: ["confirmed", "deaths"],
+                y: [res.confirmed, res.deaths],
                 type: "bar",
                 hoverinfo: "none"
             }
@@ -76,8 +76,8 @@ fetch("/covid?search=india").then(response => {
 
         var pieData = [
             {
-                values: [res.confirmed, res.recovered, res.deaths],
-                labels: ["confirmed", "recovered", "deaths"],
+                values: [res.confirmed, res.deaths],
+                labels: ["confirmed", "deaths"],
                 type: "pie"
             }
         ];
@@ -124,8 +124,8 @@ form.addEventListener("submit", e => {
                 // BAR GRAPH => RESULT
                 let barData = [
                     {
-                        x: ["confirmed", "recovered", "deaths"],
-                        y: [res.confirmed, res.recovered, res.deaths],
+                        x: ["confirmed", "deaths"],
+                        y: [res.confirmed, res.deaths],
                         type: "bar",
                         hoverinfo: "none"
                     }
@@ -137,8 +137,8 @@ form.addEventListener("submit", e => {
 
                 var pieData = [
                     {
-                        values: [res.confirmed, res.recovered, res.deaths],
-                        labels: ["confirmed", "recovered", "deaths"],
+                        values: [res.confirmed, res.deaths],
+                        labels: ["confirmed", "deaths"],
                         type: "pie"
                     }
                 ];

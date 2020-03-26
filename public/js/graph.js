@@ -1,6 +1,5 @@
 console.log("Graph file loaded successfully");
 
-
 fetch("/covidLatest").then(response => {
     response
         .json()
@@ -10,8 +9,8 @@ fetch("/covidLatest").then(response => {
             // BAR GRAPH => DEFAULT
             let barData = [
                 {
-                    x: ["confirmed", "recovered", "deaths"],
-                    y: [res.confirmed, res.deaths, res.recovered],
+                    x: ["confirmed", "deaths"],
+                    y: [res.confirmed, res.deaths],
                     type: "bar"
                 }
             ];
@@ -21,8 +20,8 @@ fetch("/covidLatest").then(response => {
             // PIE CHART => DEFAULT
             let pieData = [
                 {
-                    values: [res.confirmed, res.deaths, res.recovered],
-                    labels: ["confirmed", "recovered", "deaths"],
+                    values: [res.confirmed, res.deaths],
+                    labels: ["confirmed", "deaths"],
                     type: "pie"
                 }
             ];
