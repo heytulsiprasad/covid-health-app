@@ -8,7 +8,8 @@
 
 &nbsp;
 
-![home page](https://i.imgur.com/FbG4dfi.png)
+![home page](https://i.imgur.com/djAODAa.png)
+![stats page](https://i.imgur.com/QZV9WgT.png)
 ![symptom calculator](https://i.imgur.com/0be8mm6.png)
 
 # Getting Started ✅
