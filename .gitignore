@@ -1,3 +1,4 @@
 node_modules/
 .env
 src/utils/test.js
+public/sass
